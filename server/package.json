@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.15",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.5.8",
+    "mongoose": "^5.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.12.0"
+  }
+}
