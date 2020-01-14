@@ -1,18 +1,31 @@
-import { GraphQLString, GraphQLList, GraphQLInputObjectType } from "graphql";
+import {
+  GraphQLString,
+  GraphQLList,
+  GraphQLInputObjectType,
+  GraphQLNonNull
+} from "graphql";
 
 import CommentType from "./CommentType";
-import { getComments, saveComment } from "./CommentLoader";
+import { getComments, saveComment, getComment } from "./CommentLoader";
 
-export const mutations = {
+export const queries = {
   getComments: {
     // o tipo é uma lista de comentarios
     type: GraphQLList(CommentType),
     // chama o metodo getCOments
     resolve: getComments
+  },
+  getComment: {
+    type: CommentType,
+    // chama o metodo getCOment
+    resolve: getComment,
+    args: {
+      id: { type: new GraphQLNonNull(GraphQLString) }
+    }
   }
 };
 
-export const queries = {
+export const mutations = {
   saveComment: {
     // tipo commentario
     type: CommentType,

@@ -12,3 +12,9 @@ export async function getComments() {
 
   return comments;
 }
+
+export async function getComment(_, { id }) {
+  const comments = await Comment.findById(id);
+
+  return comments;
+}
