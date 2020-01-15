@@ -6,7 +6,12 @@ import {
 } from "graphql";
 
 import CommentType from "./CommentType";
-import { getComments, saveComment, getComment } from "./CommentLoader";
+import {
+  getComments,
+  saveComment,
+  getComment,
+  deleteComments
+} from "./CommentLoader";
 
 export const queries = {
   getComments: {
@@ -49,5 +54,12 @@ export const mutations = {
     },
     // chama o metodo de salvar
     resolve: saveComment
+  },
+  deleteComments: {
+    type: CommentType,
+    resolve: deleteComments,
+    args: {
+      id: { type: new GraphQLNonNull(GraphQLString) }
+    }
   }
 };

@@ -18,3 +18,8 @@ export async function getComment(_, { id }) {
 
   return comments;
 }
+
+export async function deleteComments(_, { id }) {
+  const del = await Comment.findByIdAndDelete(id);
+  return del;
+}

@@ -4,8 +4,9 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 import App from "./App";
+import "./App.css";
 
-const client = ApolloClient({
+const client = new ApolloClient({
   uri: "http://localhost:4000"
 });
 
